@@ -1,0 +1,50 @@
+.item {
+  width: 80%;
+  margin: 1% 10%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .button {
+    width: 100%;
+    background: none;
+    font-size: 1.3rem;
+    padding: 7px 0;
+    transition: 1s;
+    color: rgb(127, 145, 164);
+  }
+
+  .base {
+    border: 1px solid #11998e;
+  }
+
+  .base:hover {
+    color: black;
+    cursor: pointer;
+    background-color: #11998e;
+  }
+
+  .warning {
+    border: 1px solid rgb(207, 255, 4);
+  }
+
+  .warning:hover {
+    color: black;
+    cursor: pointer;
+    background-color: rgb(207, 255, 4);
+  }
+
+  .danger {
+    border: 1px solid rgb(255, 7, 58);
+  }
+
+  .danger:hover {
+    color: black;
+    cursor: pointer;
+    background-color: rgb(255, 7, 58);
+  }
+
+  .disabled {
+    border: 1px solid rgb(127, 145, 164);
+  }
+}

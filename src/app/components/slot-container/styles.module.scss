@@ -1,0 +1,27 @@
+.main {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+
+  .img {
+    width: 80%;
+    max-width: 1024px;
+    height: auto;
+    transition: 0.3s;
+  }
+
+  .label {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+
+.main:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}

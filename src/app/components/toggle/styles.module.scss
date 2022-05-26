@@ -1,0 +1,99 @@
+$toggleIndecator-size: 24px;
+$track-height: $toggleIndecator-size + 6;
+$track-width: $toggleIndecator-size * 2.5;
+$highContrastModeSupport: solid 2px transparent;
+$light: #7f91a4;
+$mid: 1px;
+$dark: #18181a;
+
+$track-border: $mid;
+$track-background: $light;
+$focus-ring: 0px 0px 0px 2px $dark;
+
+.item {
+  width: 80%;
+  margin: 1% 10%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .toggle {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: white;
+    font-size: 18px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .toggle__input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    &:disabled + .toggleTrack {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  .toggleTrack {
+    background: $track-background;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    height: $track-height;
+    margin-right: 12px;
+    position: relative;
+    width: $track-width;
+  }
+
+  .toggleIndecator {
+    align-items: center;
+    background: $dark;
+    border-radius: $toggleIndecator-size;
+    bottom: 2px;
+    display: flex;
+    height: $toggleIndecator-size;
+    justify-content: center;
+    left: 2px;
+    outline: $highContrastModeSupport;
+    position: absolute;
+    transition: 1s;
+    width: $toggleIndecator-size;
+  }
+
+  // The check mark is optional
+  .checkMark {
+    fill: #fff;
+    height: $toggleIndecator-size - 4;
+    width: $toggleIndecator-size - 4;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .toggle__input:checked + .toggleTrack .toggleIndecator {
+    background: $dark;
+    transform: translateX($track-width - $track-height);
+
+    .checkMark {
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: active) {
+    .toggleTrack {
+      border-radius: 0;
+    }
+  }
+}
